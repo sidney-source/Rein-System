@@ -4,7 +4,7 @@
 body {
    margin: 0;
    background-color: white;
-   overflow-y: hidden;
+   overflow-y: visible;
    /* background: linear-gradient(
       0.25turn,
       rgba(0, 0, 255, 0.5),
