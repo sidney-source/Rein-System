@@ -7,6 +7,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import { IconButton, Button, Divider, InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import ClientDetailsPage from "./inputComponents/ClientDetails";
 const FacDebit = (props) => {
    const Users = [
       {
@@ -178,7 +179,7 @@ const FacDebit = (props) => {
             {!modalOpen && (
                <SearchTable data={Search(Users)} setOpenModal={setModalOpen} />
             )}
-            {modalOpen && <AddContract setOpenModal={setModalOpen} />}
+            {modalOpen && <ClientDetailsPage setOpenModal={setModalOpen} />}
          </Layout>
       </Container>
    );

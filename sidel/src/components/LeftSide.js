@@ -235,7 +235,7 @@ const Nav2List = styled.div`
    position: relative;
    a {
       background: transparent;
-      color: rgb(17, 62, 168);
+      color: black;
 
       font-weight: 500;
       position: relative;
