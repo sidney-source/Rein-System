@@ -45,7 +45,7 @@ const InputBx = styled.div`
       font-family: "Livvic", sans-serif;
       :hover,
       :focus {
-         border: 2px solid blue;
+         border: 1px solid blue;
       }
    }
    input[type="Number"] {
@@ -60,7 +60,7 @@ const InputBx = styled.div`
       font-family: "Livvic", sans-serif;
       :hover,
       :focus {
-         border: 2px solid blue;
+         border: 1px solid blue;
       }
    }
    input[type="Date"] {
@@ -75,7 +75,7 @@ const InputBx = styled.div`
       font-family: "Livvic", sans-serif;
       :hover,
       :focus {
-         border: 2px solid blue;
+         border: 1px solid blue;
       }
    }
    input[type="Date"]::-webkit-calendar-picker-indicator {
@@ -105,7 +105,7 @@ const InputBx = styled.div`
    }
 
    input:invalid[focused="true"] {
-      border: 2px dashed red;
+      border: 1px dashed red;
    }
 
    input:invalid[focused="true"] ~ span {

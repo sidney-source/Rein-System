@@ -51,10 +51,11 @@ const Cselect = styled.div`
       border: 1px solid gray;
       outline: none;
       width: fit-content;
+      max-width: 200px;
       font-family: "Livvic", sans-serif;
       :hover,
       :focus {
-         border: 2px solid blue;
+         border: 1px solid blue;
       }
    }
 `;
