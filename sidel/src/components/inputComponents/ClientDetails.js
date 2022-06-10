@@ -1,4 +1,4 @@
-import { Button, Grid, Paper } from "@mui/material";
+import { Button, Grid, Paper, Tooltip } from "@mui/material";
 import React, { useState } from "react";
 import styled from "styled-components";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -8,17 +8,11 @@ import SaveTwoToneIcon from "@mui/icons-material/SaveTwoTone";
 import CustomSelect from "./CustomSelect";
 import CustomSelectWthBtn from "./CustomSelectWthButton";
 import InputBox from "./InputBox";
-
+import SearchTable from "./Table";
+import { Users } from "../Data/Usersdata";
+import EditIcon from "@mui/icons-material/Edit";
 export const ClientDetailsPage = (props) => {
    const inputs = [
-      {
-         id: 4,
-         name: "OurReference",
-         type: "text",
-         placeholder: "Our Reference",
-         label: "Our Reference",
-         required: false,
-      },
       {
          id: 2,
          name: "InceptionDate",
@@ -50,7 +44,7 @@ export const ClientDetailsPage = (props) => {
          id: 5,
          name: "CedantsOrder",
          type: "Number",
-         errorMessage: "% Numbers Only",
+         errorMessage: "Only %",
          placeholder: "0.00%",
          label: "Cedants Order",
          pattern:
@@ -63,7 +57,7 @@ export const ClientDetailsPage = (props) => {
          type: "Number",
          placeholder: "0.00%",
          label: "Our Order",
-         errorMessage: "% Numbers Only",
+         errorMessage: "Only %",
          pattern:
             "^[/^[1][0][0].[0]{2}%|[1-9]?[0-9].[0-9]{2}%$/gmA-Za-z0-9]{1,5}$",
          required: true,
@@ -74,11 +68,110 @@ export const ClientDetailsPage = (props) => {
          type: "checkBox",
          label: "New Business",
       },
+   ];
+   const Reindata = [
       {
-         id: 8,
-         name: "Renewable",
-         type: "checkBox",
-         label: "Renewable",
+         id: "1",
+         name: " African Reinsurance Corporation",
+      },
+      {
+         id: "2",
+         name: "CIC General Insurance Company Limited",
+      },
+      {
+         id: "3",
+         name: "Zep Re ( PTA Reinsurance Company)",
+      },
+   ];
+   const inptRskDtls = [
+      {
+         id: 1,
+         name: "SumInsured",
+         type: "text",
+         placeholder: "Sum Insured",
+         label: "Sum Insured",
+         errorMessage: "Input a Whole Number",
+         pattern: "^[0-9]*$",
+         required: true,
+      },
+      {
+         id: 2,
+         name: "100%Premium",
+         type: "text",
+         placeholder: "100% Premium",
+         label: "100% Premium",
+         errorMessage: "Input a Whole Number",
+         pattern: "^[0-9]*$",
+         required: true,
+      },
+      {
+         id: 3,
+         name: " OurOrderPremium",
+         type: "text",
+         disabled: "true",
+         placeholder: "  Our Order Premium",
+
+         label: "Our Order Premium",
+         required: false,
+      },
+      {
+         id: 4,
+         name: "Premium Tax",
+         type: "number",
+         placeholder: "0.0%",
+         errorMessage: "% only",
+         label: "Prem Tax",
+         pattern: "^[0-9]*10",
+         required: false,
+      },
+      {
+         id: 3,
+         name: " Commission",
+         type: "number",
+         placeholder: "0.0%",
+         label: "Commission",
+         width: 100,
+         required: true,
+      },
+   ];
+   const SecuritykDtls = [
+      {
+         id: 1,
+         name: "Premium Tax",
+         type: "number",
+         placeholder: "0.0%",
+         errorMessage: "% only",
+         label: "Prem Tax",
+         pattern: "^[0-9]*10",
+         required: false,
+      },
+      {
+         id: 2,
+         name: " Witholding Tax",
+         type: "number",
+         placeholder: "0.0%",
+         label: "WthTax",
+
+         required: true,
+      },
+      {
+         id: 3,
+         name: " Brk ",
+         type: "number",
+         placeholder: "0.0%",
+         label: "Brk",
+         width: 100,
+         required: true,
+      },
+   ];
+   const Insured = [
+      {
+         id: "1",
+         name: "Sidney Mutai",
+      },
+      {
+         id: "2",
+         name: "Elsie Keter",
       },
    ];
    const Insdata = [
@@ -170,14 +263,16 @@ export const ClientDetailsPage = (props) => {
    const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
    };
+
    const [query, setQuery] = useState("");
    const [values, setValues] = useState("");
    function onSelectChange(event) {
       console.log(event.target.value);
    }
+
    return (
       <Containerd>
-         <Container1>
+         <Container2>
             {/* Details Paper  */}
             <Paper
                elevation={1}
@@ -188,6 +283,7 @@ export const ClientDetailsPage = (props) => {
                   flexDirection: "column",
                   gap: 1,
                   margin: 0.5,
+
                   width: 720,
                }}
             >
@@ -195,30 +291,30 @@ export const ClientDetailsPage = (props) => {
                   <h1>Client Details</h1>
                   <BtnGrp1>
                      {/* Top Nav Details Add Button */}
-                     <Button
-                        variant="contained"
-                        sx={{
-                           p: 1,
-                           display: "flex",
-                           height: 30,
-                           fontSize: 12,
-                        }}
-                        endIcon={<AddCircleOutlineIcon />}
-                     >
-                        Edit
-                     </Button>
+                     <Tooltip title="Edit">
+                        <Button
+                           variant="contained"
+                           sx={{
+                              p: 1,
+                              display: "flex",
+                              height: 30,
+                              fontSize: 12,
+                           }}
+                           endIcon={<AddCircleOutlineIcon />}
+                        >
+                           Edit
+                        </Button>
+                     </Tooltip>
                      {/* Top Nav Details Delete Button */}
-                     <IconButton
-                        aria-label="delete"
-                        color="success"
-                        size="small"
-                     >
-                        <DeleteIcon size="large" color="error" />
-                     </IconButton>
-                     {/* Top Nav Details Save Button */}
-                     <IconButton aria-label="Save" color="success" size="small">
-                        <SaveTwoToneIcon color="success" />
-                     </IconButton>
+                     <Tooltip title="Clear Form">
+                        <IconButton
+                           aria-label="delete"
+                           color="success"
+                           size="small"
+                        >
+                           <DeleteIcon size="large" color="error" />
+                        </IconButton>
+                     </Tooltip>
                   </BtnGrp1>
                </DtlsTopNav>
                <DtlsBodyNav>
@@ -286,39 +382,128 @@ export const ClientDetailsPage = (props) => {
                         autoWidth={false}
                      />
                   ))}
+                  <CustomSelectWthBtn
+                     label="Insured"
+                     data={Insured}
+                     onChange={onSelectChange}
+                  />
+                  {/* Insurance Company Select Button */}
+                  {inptRskDtls.map((input) => (
+                     <InputBox
+                        key={input.id}
+                        {...input}
+                        value={values[input.name]}
+                        onChange={onChange}
+                        autoWidth={false}
+                     />
+                  ))}
                </DtlsBodyNav>
             </Paper>
             <Paper
                elevation={1}
                variant="outlined"
                sx={{
-                  p: 2,
+                  p: 0.5,
                   bgcolor: "lightblue",
                   display: "grid",
-                  gridTemplateColumns: { md: "1fr 1fr" },
+                  width: 460,
                   gap: 1,
                   margin: 0.5,
                }}
             >
-               <Grid>hi</Grid>
+               <Grid
+                  sx={{
+                     p: 0,
+                     bgcolor: "lightblue",
+                     display: "grid",
+                     gap: 1,
+                     margin: 0.5,
+                  }}
+               >
+                  <DetailsCard>
+                     <h1>
+                        It’s possible that a Datagrid will have no records to
+                        display. If the Datagrid’s parent component handles the
+                        loading state, the Datagrid will return null and render
+                        nothing. Passing through a component to the empty prop
+                        will cause the Datagrid to render the empty component
+                        instead of null. It’s possible that a Datagrid will have
+                        no records to display. If the Datagrid’s parent
+                        component handles the loading state, the Datagrid will
+                        return null and render nothing. Passing through a
+                        component to the empty prop will cause the Datagrid to
+                        render the empty component instead of null.
+                     </h1>
+                  </DetailsCard>
+               </Grid>
             </Paper>
-         </Container1>
-         <Container2>
+         </Container2>
+         <Container3>
             <Paper
                elevation={1}
                variant="outlined"
                sx={{
-                  p: 2,
-                  bgcolor: "lightblue",
-                  display: "grid",
-                  gridTemplateColumns: { md: "1fr 1fr" },
+                  p: 0.5,
+
+                  display: "flex",
+                  flexDirection: "column    ",
                   gap: 1,
                   margin: 0.5,
+                  marginTop: 0,
+                  width: 720,
                }}
             >
-               <Grid>hi</Grid>
+               <DtlsTopNav>
+                  <h1>Security Details</h1>
+                  <BtnGrp1>
+                     {/* Top Nav Details Edit Button */}
+                     <Tooltip title="Edit">
+                        <Button
+                           variant="contained"
+                           sx={{
+                              p: 0,
+                              display: "flex",
+                              height: 30,
+                              fontSize: 12,
+                           }}
+                           endIcon={<EditIcon />}
+                        >
+                           Edit
+                        </Button>
+                     </Tooltip>
+                     {/* Top Nav Details Delete Button */}
+                     <Tooltip title="Clear">
+                        <IconButton
+                           aria-label="delete"
+                           color="success"
+                           size="small"
+                        >
+                           <DeleteIcon size="large" color="error" />
+                        </IconButton>
+                     </Tooltip>
+                     {/* Top Nav Details Save Button */}
+                  </BtnGrp1>
+               </DtlsTopNav>
+               <DtlsBodyNav>
+                  <CustomSelectWthBtn
+                     label="Reinsurer"
+                     data={Reindata}
+                     onChange={onSelectChange}
+                  />
+                  {/* Type Company Select Button */}
+
+                  {SecuritykDtls.map((input) => (
+                     <InputBox
+                        key={input.id}
+                        {...input}
+                        value={values[input.name]}
+                        onChange={onChange}
+                        autoWidth={false}
+                     />
+                  ))}
+               </DtlsBodyNav>
             </Paper>
-         </Container2>
+         </Container3>
       </Containerd>
    );
 };
@@ -328,12 +513,12 @@ const Containerd = styled.div`
    display: flex;
    flex-direction: column;
 `;
-const Container1 = styled.div`
+const Container2 = styled.div`
    margin: 0px;
    display: flex;
-   flex
 `;
-const Container2 = styled.div`
+
+const Container3 = styled.div`
    margin: 0px;
    display: flex;
 `;
@@ -344,6 +529,11 @@ const DtlsTopNav = styled.div`
    justify-content: space-between;
    vertical-align: middle;
 `;
+const DetailsCard = styled.div`
+   display: flex;
+   white-space: pre-wrap;
+`;
+
 const FormContWraper = styled.div`
    display: flex;
    flex-direction: row;
@@ -362,6 +552,13 @@ const BtnGrp1 = styled.div`
 `;
 
 const DtlsBodyNav = styled.div`
+   display: flex;
+   margin: 0px;
+   position: relative;
+   flex-wrap: wrap;
+   gap: 5px;
+`;
+const DtlsBodyNav1 = styled.div`
    display: flex;
    margin: 0px;
    position: relative;

@@ -109,7 +109,7 @@ const Container = styled.div`
 const Content = styled.div`
    display: flex;
    align-items: center;
-   height: 40px;
+   height: 35px;
    margin-left: 2px;
    margin-right: 20px;
    min-height: 100%;
