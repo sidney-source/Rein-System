@@ -123,7 +123,7 @@ const FacDebit = (props) => {
                      padding: "0 15px",
                   }}
                   variant="outlined"
-                  endIcon={<ArrowBackIcon />}
+                  startIcon={<ArrowBackIcon />}
                >
                   Back
                </Button>

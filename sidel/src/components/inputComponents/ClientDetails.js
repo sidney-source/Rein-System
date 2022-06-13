@@ -409,6 +409,7 @@ export const ClientDetailsPage = (props) => {
                   width: 460,
                   gap: 1,
                   margin: 0.5,
+                  marginLeft: 0,
                }}
             >
                <Grid
