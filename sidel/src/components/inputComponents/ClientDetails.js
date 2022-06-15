@@ -8,8 +8,9 @@ import SearchTable from "./Table";
 import CustomSelect from "./CustomSelect";
 import CustomSelectWthBtn from "./CustomSelectWthButton";
 import InputBox from "./InputBox";
-import { Users } from "../Data/Usersdata";
+import { Security, Users } from "../Data/Usersdata";
 import EditIcon from "@mui/icons-material/Edit";
+import SecurityTable from "./SecurityTables";
 export const ClientDetailsPage = (props) => {
    const inputs = [
       {
@@ -136,16 +137,6 @@ export const ClientDetailsPage = (props) => {
    const SecuritykDtls = [
       {
          id: 1,
-         name: "Premium Tax",
-         type: "number",
-         placeholder: "0.0%",
-         errorMessage: "% only",
-         label: "Prem Tax",
-         pattern: "^[0-9]*10",
-         required: false,
-      },
-      {
-         id: 2,
          name: " Witholding Tax",
          type: "number",
          placeholder: "0.0%",
@@ -154,11 +145,11 @@ export const ClientDetailsPage = (props) => {
          required: false,
       },
       {
-         id: 3,
+         id: 2,
          name: " Brk ",
          type: "number",
          placeholder: "0.0%",
-         label: "Brk",
+         label: "Brokerage",
          width: 100,
          required: false,
       },
@@ -504,7 +495,7 @@ export const ClientDetailsPage = (props) => {
                            color="success"
                            sx={{
                               p: 0,
-                              mt: 1,
+                              mt: 1.7,
                               display: "flex",
                               height: 30,
                               fontSize: 12,
@@ -564,7 +555,7 @@ export const ClientDetailsPage = (props) => {
                   width: "100%",
                }}
             >
-               <SearchTable data={Users} />
+               <SecurityTable data={Security} />
             </Paper>
          </Container3>
       </Containerd>
