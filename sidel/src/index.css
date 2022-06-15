@@ -37,3 +37,25 @@ span {
    font-weight: 500;
    font-size: 100%;
 }
+
+h4 {
+   font-family: "Roboto", sans-serif;
+   padding: 0;
+   border: 0;
+   font-weight: 400;
+   outline: none;
+   font-size: 0.9em;
+   vertical-align: baseline;
+   background: transparent;
+}
+h5 {
+   font-family: "Roboto", sans-serif;
+   color: blueviolet;
+   padding: 0;
+   border: 0;
+   font-weight: lighter;
+   outline: none;
+   font-size: 0.9em;
+   vertical-align: baseline;
+   background: transparent;
+}

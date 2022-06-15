@@ -4,11 +4,10 @@ import styled from "styled-components";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SaveTwoToneIcon from "@mui/icons-material/SaveTwoTone";
+import SearchTable from "./Table";
 import CustomSelect from "./CustomSelect";
 import CustomSelectWthBtn from "./CustomSelectWthButton";
 import InputBox from "./InputBox";
-import SearchTable from "./Table";
 import { Users } from "../Data/Usersdata";
 import EditIcon from "@mui/icons-material/Edit";
 export const ClientDetailsPage = (props) => {
@@ -152,7 +151,7 @@ export const ClientDetailsPage = (props) => {
          placeholder: "0.0%",
          label: "WthTax",
 
-         required: true,
+         required: false,
       },
       {
          id: 3,
@@ -161,7 +160,7 @@ export const ClientDetailsPage = (props) => {
          placeholder: "0.0%",
          label: "Brk",
          width: 100,
-         required: true,
+         required: false,
       },
    ];
    const Insured = [
@@ -404,9 +403,9 @@ export const ClientDetailsPage = (props) => {
                variant="outlined"
                sx={{
                   p: 0.5,
-                  bgcolor: "lightblue",
+
                   display: "grid",
-                  width: 460,
+                  width: "40%",
                   gap: 1,
                   margin: 0.5,
                   marginLeft: 0,
@@ -415,26 +414,48 @@ export const ClientDetailsPage = (props) => {
                <Grid
                   sx={{
                      p: 0,
-                     bgcolor: "lightblue",
                      display: "grid",
-                     gap: 1,
+                     gap: 0,
                      margin: 0.5,
                   }}
                >
                   <DetailsCard>
-                     <h1>
-                        It’s possible that a Datagrid will have no records to
-                        display. If the Datagrid’s parent component handles the
-                        loading state, the Datagrid will return null and render
-                        nothing. Passing through a component to the empty prop
-                        will cause the Datagrid to render the empty component
-                        instead of null. It’s possible that a Datagrid will have
-                        no records to display. If the Datagrid’s parent
-                        component handles the loading state, the Datagrid will
-                        return null and render nothing. Passing through a
-                        component to the empty prop will cause the Datagrid to
-                        render the empty component instead of null.
-                     </h1>
+                     <h1>Cover Sumarry</h1>
+                     <DtlsCardContent>
+                        <h3>Premium $ 12,456</h3>
+                        <h2>Pending</h2>
+                     </DtlsCardContent>
+                     <DtlsCardContainer>
+                        <DtlsCardContent>
+                           <h4>Insurance Company</h4>
+                           <h5>James Wood Ins</h5>
+                        </DtlsCardContent>
+                        <DtlsCardContent>
+                           <h4>Type of Reisnurance Cover</h4>
+                           <h5>Facultative</h5>
+                        </DtlsCardContent>
+                        <DtlsCardContent>
+                           <h4>Country of Policy </h4>
+                           <h5>Kenya</h5>
+                        </DtlsCardContent>
+
+                        <DtlsCardContent>
+                           <h4>Inception Date</h4>
+                           <h5>Wednesday 14th 2020</h5>
+                        </DtlsCardContent>
+                        <DtlsCardContent>
+                           <h4>order</h4>
+                           <h5>40%</h5>
+                        </DtlsCardContent>
+                        <DtlsCardContent>
+                           <h4>100% Sum Insured</h4>
+                           <h5>234,567,904</h5>
+                        </DtlsCardContent>
+                        <DtlsCardContent>
+                           <h4>Commission</h4>
+                           <h5>30%</h5>
+                        </DtlsCardContent>
+                     </DtlsCardContainer>
                   </DetailsCard>
                </Grid>
             </Paper>
@@ -451,11 +472,49 @@ export const ClientDetailsPage = (props) => {
                   gap: 1,
                   margin: 0.5,
                   marginTop: 0,
-                  width: 720,
+                  width: "100%",
                }}
             >
                <DtlsTopNav>
-                  <h1>Security Details</h1>
+                  <h3>Security Details</h3>
+                  <div
+                     style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "normal",
+                     }}
+                  >
+                     <CustomSelectWthBtn
+                        label="Reinsurer"
+                        data={Reindata}
+                        onChange={onSelectChange}
+                     />
+                     {SecuritykDtls.map((input) => (
+                        <InputBox
+                           key={input.id}
+                           {...input}
+                           value={values[input.name]}
+                           onChange={onChange}
+                           autoWidth={false}
+                        />
+                     ))}
+                     <Tooltip title="Add">
+                        <Button
+                           variant="contained"
+                           color="success"
+                           sx={{
+                              p: 0,
+                              mt: 1,
+                              display: "flex",
+                              height: 30,
+                              fontSize: 12,
+                           }}
+                           endIcon={<AddCircleOutlineIcon />}
+                        >
+                           Add
+                        </Button>
+                     </Tooltip>
+                  </div>
                   <BtnGrp1>
                      {/* Top Nav Details Edit Button */}
                      <Tooltip title="Edit">
@@ -485,24 +544,27 @@ export const ClientDetailsPage = (props) => {
                      {/* Top Nav Details Save Button */}
                   </BtnGrp1>
                </DtlsTopNav>
-               <DtlsBodyNav>
-                  <CustomSelectWthBtn
-                     label="Reinsurer"
-                     data={Reindata}
-                     onChange={onSelectChange}
-                  />
-                  {/* Type Company Select Button */}
+            </Paper>
+         </Container3>
 
-                  {SecuritykDtls.map((input) => (
-                     <InputBox
-                        key={input.id}
-                        {...input}
-                        value={values[input.name]}
-                        onChange={onChange}
-                        autoWidth={false}
-                     />
-                  ))}
-               </DtlsBodyNav>
+         <Container3>
+            <Paper
+               elevation={1}
+               variant="outlined"
+               sx={{
+                  p: 0.5,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+                  margin: 0.5,
+                  overflowX: "hidden",
+                  overflowY: "scroll",
+                  marginTop: 0,
+                  height: "160px",
+                  width: "100%",
+               }}
+            >
+               <SearchTable data={Users} />
             </Paper>
          </Container3>
       </Containerd>
@@ -518,23 +580,22 @@ const Container2 = styled.div`
    margin: 0px;
    display: flex;
 `;
-
 const Container3 = styled.div`
    margin: 0px;
    display: flex;
 `;
 const DtlsTopNav = styled.div`
    display: flex;
-   align-items: baseline;
    position: relative;
    justify-content: space-between;
    vertical-align: middle;
+   height: 45px;
 `;
 const DetailsCard = styled.div`
    display: flex;
    white-space: pre-wrap;
+   flex-direction: column;
 `;
-
 const FormContWraper = styled.div`
    display: flex;
    flex-direction: row;
@@ -551,7 +612,6 @@ const BtnGrp1 = styled.div`
    justify-content: center;
    gap: 3px;
 `;
-
 const DtlsBodyNav = styled.div`
    display: flex;
    margin: 0px;
@@ -559,11 +619,27 @@ const DtlsBodyNav = styled.div`
    flex-wrap: wrap;
    gap: 5px;
 `;
-const DtlsBodyNav1 = styled.div`
+
+const DtlsCardContainer = styled.div`
    display: flex;
-   margin: 0px;
-   position: relative;
-   flex-wrap: wrap;
-   gap: 5px;
+   width: 100%;
+   flex-direction: column;
+   gap: 0;
 `;
+const DtlsCardContent = styled.div`
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   margin: 0;
+   height: 20px;
+   h3 {
+      color: green;
+      margin-top: 5px;
+   }
+   h2 {
+      margin-top: 5px;
+      color: red;
+   }
+`;
+
 export default ClientDetailsPage;
