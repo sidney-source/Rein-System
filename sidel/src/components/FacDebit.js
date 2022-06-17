@@ -8,6 +8,8 @@ import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import { IconButton, Button, Divider, InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClientDetailsPage from "./inputComponents/ClientDetails";
+import Dashboard from "./inputComponents/Dashboard";
+
 const FacDebit = (props) => {
    const Users = [
       {
@@ -109,8 +111,9 @@ const FacDebit = (props) => {
    return (
       <Container>
          <Layout>
-            <Nav>
+            <TopNav>
                {/* Back Button */}
+
                <Button
                   onClick={() => {
                      setModalOpen(false);
@@ -173,7 +176,7 @@ const FacDebit = (props) => {
                >
                   Create
                </Button>
-            </Nav>
+            </TopNav>
 
             {/* Switching Between Search mODAL & Create Contract Modal */}
             {!modalOpen && (
@@ -214,7 +217,7 @@ const SearchDiv = styled.div`
    }
 `;
 
-const Nav = styled.nav`
+const TopNav = styled.nav`
    display: flex;
    padding: 5px;
    justify-content: space-between;
