@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 const SignIn = ({ setOpenModal }) => {
    return (
       <Container>
@@ -47,9 +48,16 @@ const SignIn = ({ setOpenModal }) => {
                   type="password"
                />
             </Emailadd2>
-            <Button variant="contained" color="success" size="large" fullWidth>
-               Sign up
-            </Button>
+            <Link to="/Home">
+               <Button
+                  variant="contained"
+                  color="success"
+                  size="large"
+                  fullWidth
+               >
+                  Sign up
+               </Button>
+            </Link>
             <h1>Copyright © Sidel insurance Services 2022</h1>
          </Layout>
       </Container>

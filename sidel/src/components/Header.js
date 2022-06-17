@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Tooltip from "@mui/material/Tooltip";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { IconButton } from "@mui/material";
+import { Link, withRouter } from "react-router-dom";
 const Header = (props) => {
    return (
       <Container>
@@ -83,9 +86,18 @@ const Header = (props) => {
                         </svg>
                      </Tooltip>
                   </NavList>
-                  <User>
-                     <a>Sign Out</a>
-                  </User>
+                  <Link to="/Login">
+                     <Tooltip title="Log out">
+                        <IconButton
+                           size="medium"
+                           color="warning"
+                           variant="outlined"
+                           sx={{ paddingleft: 0 }}
+                        >
+                           <LogoutIcon />
+                        </IconButton>
+                     </Tooltip>
+                  </Link>
                </NavListWrap>
             </Nav>
          </Content>
@@ -133,48 +145,7 @@ const Content = styled.div`
       cursor: pointer;
    }
 `;
-// const Search = styled.div`
-//    opacity: 1;
-//    flex-grow: 1;
-//    position: relative;
 
-//    & > div {
-//       max-width: 280px;
-//       input {
-//          border: none;
-//          box-shadow: inset 0 0 0 1px grey;
-//          background-color: rgba(165, 183, 232, 0.23);
-//          border-radius: 10px;
-//          color: rgba(0, 0, 0, 0.9);
-//          width: 218px;
-//          padding: 0 8px 0 40px;
-//          line-height: 1.5;
-//          font-weight: 400;
-//          font-size: 17px;
-//          font-family: "Livvic", sans-serif;
-//          border-width: 1px;
-//          border-color: black;
-//          vertical-align: text-top;
-//          outline: none;
-//       }
-//    }
-// `;
-// const SearchIconZ = styled.div`
-//    width: 40px;
-//    position: absolute;
-
-//    top: 7px;
-//    font-family: "Livvic", sans-serif;
-//    left: 0px;
-//    border-radius: 0 2px 2px 0;
-//    margin: 0;
-//    cursor: pointer;
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    color: rgb(17, 62, 168), 0.2;
-//    transition: background-color 0.15s;
-// `;
 const Nav = styled.nav`
    margin-left: auto;
    display: block;
@@ -236,7 +207,7 @@ const NavListWrap = styled.ul`
    }
 `;
 
-const User = styled.a`
+const User = styled.div`
    font-size: 16px;
    box-shadow: inset 0 0 0 1px #0a66c2;
    color: #0a66c2;
@@ -249,6 +220,10 @@ const User = styled.a`
    outline: none;
    margin: 10px 10px 10px 10px;
    background-color: transparent;
+   button {
+      outline: none;
+      background-color: transparent;
+   }
    &:hover {
       background-color: rgba(17, 62, 168);
       color: white;

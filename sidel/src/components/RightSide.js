@@ -1,11 +1,13 @@
 import React from "react";
 import FacDebit from "./FacDebit";
 import styled from "styled-components";
+import Dashboard from "./inputComponents/Dashboard";
 
 const RightSide = (props) => {
    return (
       <Container>
-         <FacDebit />
+         <Dashboard />
+         {/* <FacDebit /> */}
       </Container>
    );
 };
