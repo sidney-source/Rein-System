@@ -4,11 +4,11 @@ import styled from "styled-components";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SearchTable from "./Table";
+
 import CustomSelect from "./CustomSelect";
 import CustomSelectWthBtn from "./CustomSelectWthButton";
 import InputBox from "./InputBox";
-import { Security, Users } from "../Data/Usersdata";
+import { Security } from "../Data/Usersdata";
 import EditIcon from "@mui/icons-material/Edit";
 import SecurityTable from "./SecurityTables";
 export const ClientDetailsPage = (props) => {
@@ -240,21 +240,11 @@ export const ClientDetailsPage = (props) => {
          name: "Tanzania",
       },
    ];
-   const keys = [
-      "Insured",
-      "Reference",
-      "Our_Order",
-      "Period",
-      "Type",
-      "Risk_Class",
-      "Currency",
-      "Status",
-   ];
+
    const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
    };
 
-   const [query, setQuery] = useState("");
    const [values, setValues] = useState("");
    function onSelectChange(event) {
       console.log(event.target.value);
