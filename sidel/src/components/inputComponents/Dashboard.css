@@ -1,0 +1,14 @@
+.featuredIcon {
+   font-size: 14px;
+   margin-left: 5px;
+   color: green;
+}
+
+.featuredIcon.negative {
+   color: red;
+}
+
+.featuredSub {
+   font-size: 15px;
+   color: gray;
+}
