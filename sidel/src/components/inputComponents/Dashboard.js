@@ -50,7 +50,7 @@ const Featured = styled.div`
 const FeaturedItem = styled.div`
    flex: 1;
    margin: 0px 10px;
-   padding: 20px;
+   padding: 10px;
    border-radius: 10px;
    cursor: pointer;
    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
@@ -65,7 +65,7 @@ const FeaturedItem = styled.div`
    }
 `;
 const FeaturedMoneyContainer = styled.div`
-   margin: 5px 0px;
+   margin: 0px 0px;
    display: flex;
    align-items: center;
    h6 {
@@ -73,10 +73,9 @@ const FeaturedMoneyContainer = styled.div`
       font-weight: 600;
    }
    h5 {
-      display: flex;
-      font-size: 16px;
+      font-size: 20px;
       align-items: bottom;
-      margin-left: 10px;
+      margin-left: 15px;
    }
 `;
 export default Dashboard;
