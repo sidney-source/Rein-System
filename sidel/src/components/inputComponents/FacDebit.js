@@ -1,14 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import AddContract from "./inputComponents/AddContract";
-import SearchTable from "./inputComponents/Table";
+import SearchTable from "./Table";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import { IconButton, Button, Divider, InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import ClientDetailsPage from "./inputComponents/ClientDetails";
-import Dashboard from "./inputComponents/Dashboard";
+import ClientDetailsPage from "./ClientDetails";
 
 const FacDebit = (props) => {
    const Users = [
