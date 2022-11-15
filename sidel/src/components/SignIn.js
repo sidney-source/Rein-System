@@ -21,14 +21,25 @@ const SignIn = ({ setOpenModal }) => {
         </Lock>
         <a>Sign Up</a>
         <Emailadd2>
-          <TextField id="first-name" label="First Name *" size="small" />
+          <TextField
+            id="first-name"
+            label="First Name *"
+            color="primary"
+            size="small"
+          />
 
-          <TextField id="last-name" label="Last Name *" size="small" />
+          <TextField
+            id="last-name"
+            label="Last Name *"
+            color="primary"
+            size="small"
+          />
         </Emailadd2>
         <Emailadd>
           <TextField
             id="email-address"
             label="Email Address *"
+            color="primary"
             size="small"
             fullWidth
           />
@@ -38,18 +49,20 @@ const SignIn = ({ setOpenModal }) => {
             id="password"
             label="Password*"
             size="small"
+            color="primary"
             type="password"
           />
 
           <TextField
             id="confirm"
+            color="primary"
             label="Confirm *"
             size="small"
             type="password"
           />
         </Emailadd2>
         <Link to="/Home">
-          <Button variant="contained" color="success" size="large" fullWidth>
+          <Button color="primary" size="large" fullWidth>
             Sign up
           </Button>
         </Link>
@@ -66,7 +79,7 @@ const Container = styled.div`
   background: linear-gradient(
     0.25turn,
     rgba(0, 0, 255, 0.4),
-    rgb(216, 71, 39, 0.4)
+    rgb(255, 71, 39, 0.4)
   );
   height: 100vh;
   width: 100vw;
@@ -77,14 +90,16 @@ const Container = styled.div`
   justify-content: center;
 `;
 const Layout = styled.div`
-  background: whitesmoke;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
-  border: 0px solid rgba(33, 43, 231, 0.82);
+  border: 1px solid rgba(33, 43, 231, 0.82);
   border-radius: 10px;
   padding: 20px;
   position: absolute;
+  color: whitesmoke;
+  border-color: #ff9966;
   height: 400px;
   width: 300px;
   display: flex;
