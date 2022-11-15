@@ -313,8 +313,8 @@ const Home = (props) => {
             </LeftSideNavLis1tWrap>
           </LeftSideArtCard>
         </LeftSideContainer>
-
         {/* <RightSide /> */}
+
         {!modalOpen && <FacDebit setOpenModal={setModalOpen} />}
         {modalOpen && <Dashboard setOpenModal={setModalOpen} />}
       </BodyLayout>
@@ -322,7 +322,16 @@ const Home = (props) => {
   );
 };
 
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+
+  margin: 0;
+  width: 100%;
+`;
 // Header Styling
+
 const HeaderContainer = styled.div`
   background-color: transparent;
   margin-left: 0px;
@@ -365,20 +374,14 @@ const HeaderContent = styled.div`
 `;
 const HeaderNav = styled.nav`
   margin-left: auto;
-  display: block;
-  @media (max-width: 768px) {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background: white;
-    width: 100%;
-  }
+  display: flex;
 `;
 const HeaderNavList = styled.div`
   display: flex;
   align-items: center;
   font-size: 25px;
   color: black;
+
   cursor: pointer;
   :hover {
     color: blue;
@@ -407,7 +410,7 @@ const HeaderNavListWrap = styled.ul`
   display: flex;
   flex-wrap: nowrap;
   list-style-type: none;
-  position: relative;
+
   gap: 20px;
   .active {
     span:after {
@@ -427,7 +430,7 @@ const HeaderNavListWrap = styled.ul`
 const LeftSideContainer = styled.div`
   margin: 0;
   background-color: transparent;
-  width: 135px;
+  width: 8%;
   overflow-y: hidden;
   overflow-x: hidden;
   height: 93vh;
@@ -485,20 +488,9 @@ const BodyLayout = styled.div`
   display: flex;
   flex-direction: row;
   background-color: transparent;
-  margin: 5;
-  overflow-y: hidden;
-  overflow-x: hidden;
 
-  @media (max-width: 768px) {
-    display: flex;
-    padding: 0 5px;
-  }
-`;
-const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  margin: 0;
+  width: auto;
+  margin: 5;
 `;
 
 export default Home;
