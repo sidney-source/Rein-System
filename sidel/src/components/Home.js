@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FacDebit from "./inputComponents/FacDebit";
 import React, { useState } from "react";
 import Dashboard from "./inputComponents/Dashboard";
+import Quote from "./inputComponents/Quote";
 
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(true);
@@ -150,11 +151,7 @@ const Home = (props) => {
                 <h1>Users</h1>
               </LeftSideNav2List>
               {/* Facultative */}
-              <LeftSideNav2List
-                onClick={() => {
-                  setModalOpen(false);
-                }}
-              >
+              <LeftSideNav2List>
                 <a>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -184,6 +181,26 @@ const Home = (props) => {
                   </svg>
                 </a>
                 <h1>Treaty</h1>
+              </LeftSideNav2List>
+              {/* Quote */}
+              <LeftSideNav2List
+                onClick={() => {
+                  setModalOpen(false);
+                }}
+              >
+                <a>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    fill="currentColor"
+                    class="bi bi-signpost"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M7 1.414V4H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v6h2v-6h3.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H9V1.414a1 1 0 0 0-2 0zM12.532 5l1.666 2-1.666 2H2V5h10.532z" />
+                  </svg>
+                </a>
+                <h1>Quote</h1>
               </LeftSideNav2List>
               {/* Fac Claims */}
               <LeftSideNav2List>
@@ -315,7 +332,7 @@ const Home = (props) => {
         </LeftSideContainer>
         {/* <RightSide /> */}
 
-        {!modalOpen && <FacDebit setOpenModal={setModalOpen} />}
+        {!modalOpen && <Quote setOpenModal={setModalOpen} />}
         {modalOpen && <Dashboard setOpenModal={setModalOpen} />}
       </BodyLayout>
     </Layout>
@@ -343,7 +360,7 @@ const HeaderContainer = styled.div`
   width: 100%;
 
   white-space: nowrap;
-  align-items: center; ;
+  align-items: center;
 `;
 const HeaderContent = styled.div`
   display: flex;
@@ -430,7 +447,9 @@ const HeaderNavListWrap = styled.ul`
 const LeftSideContainer = styled.div`
   margin: 0;
   background-color: transparent;
-  width: 8%;
+  width: 15%;
+  min-width: 15%;
+  max-width: 20%;
   overflow-y: hidden;
   overflow-x: hidden;
   height: 93vh;
