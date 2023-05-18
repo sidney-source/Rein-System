@@ -343,7 +343,6 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: transparent;
-
   margin: 0;
   width: 100%;
 `;
@@ -438,7 +437,7 @@ const HeaderNavListWrap = styled.ul`
       left: 0;
       position: absolute;
       transition: transform 0.2s ease-in-out;
-      width: 100%;
+      width: 100vh;
       border-color: rgba(0, 0, 0, 1.3);
     }
   }
@@ -447,9 +446,9 @@ const HeaderNavListWrap = styled.ul`
 const LeftSideContainer = styled.div`
   margin: 0;
   background-color: transparent;
-  width: 15%;
-  min-width: 15%;
-  max-width: 20%;
+  width: 20vh;
+  min-width: 15vh;
+  max-width: 20vh;
   overflow-y: hidden;
   overflow-x: hidden;
   height: 93vh;
@@ -507,6 +506,6 @@ const BodyLayout = styled.div`
   display: flex;
   flex-direction: row;
   background-color: transparent;
-  width: auto;
+  width: 100%;
 `;
 export default Home;

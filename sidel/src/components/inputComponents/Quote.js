@@ -1,11 +1,37 @@
+import { Button, MenuItem, Select } from "@mui/material";
 import styled from "styled-components";
+import React, { useState } from "react";
+import select, { SelectChangeEvent } from "@mui/material/Select";
+import CustomSelectWthBtn from "./CustomSelectWthButton";
 
+const Type = [
+  {
+    id: "1",
+    name: "Quote",
+  },
+  {
+    id: "2",
+    name: "Addition",
+  },
+];
+
+function onSelectChange(event) {
+  console.log(event.target.value);
+}
 const Quote = (props) => {
   return (
     <Container>
       <Layout>
         <RightContents>
           <a>Quote Generation</a>
+          <div>
+            <Button variant="outlined">Address</Button>
+            <CustomSelectWthBtn
+              label="Select"
+              data={Type}
+              onChange={onSelectChange}
+            />
+          </div>
         </RightContents>
         <LeftContents>
           <a>Ellgeo Seagon Quote</a>
@@ -114,6 +140,10 @@ const RightContents = styled.div`
   border-radius: 3px;
   border: 1px solid black;
   border-radius: 1px solid black;
+  div {
+    margin: 5px;
+    justify-content: left;
+  }
 `;
 const LeftContents = styled.div`
   margin: 5px;
