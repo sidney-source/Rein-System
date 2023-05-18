@@ -257,11 +257,11 @@ export const ClientDetailsPage = (props) => {
           elevation={1}
           variant="outlined"
           sx={{
-            p: 0.5,
+            p: 0.1,
             display: "flex",
             flexDirection: "column",
-            gap: 1,
-            margin: 0.5,
+            gap: 0.5,
+            margin: 0.1,
           }}
         >
           <DtlsTopNav>
@@ -272,7 +272,7 @@ export const ClientDetailsPage = (props) => {
                 <Button
                   variant="contained"
                   sx={{
-                    p: 1,
+                    p: 0.5,
                     display: "flex",
                     height: 30,
                     fontSize: 12,
@@ -372,7 +372,7 @@ export const ClientDetailsPage = (props) => {
             ))}
           </DtlsBodyNav>
         </Paper>
-        <Paper
+        {/* <Paper
           elevation={1}
           variant="outlined"
           sx={{
@@ -433,7 +433,7 @@ export const ClientDetailsPage = (props) => {
               </DtlsCardContainer>
             </DetailsCard>
           </Grid>
-        </Paper>
+        </Paper> */}
       </Container2>
       <Container3>
         <Paper
@@ -496,7 +496,7 @@ export const ClientDetailsPage = (props) => {
                 <Button
                   variant="contained"
                   sx={{
-                    p: 0,
+                    p: 0.1,
                     display: "flex",
                     height: 30,
                     fontSize: 12,
@@ -552,36 +552,32 @@ const Container2 = styled.div`
   display: flex;
 `;
 const Container3 = styled.div`
+  display: flex;
   margin: 0px;
   display: flex;
 `;
 const DtlsTopNav = styled.div`
   display: flex;
-  position: relative;
+  flex-direction: row;
   justify-content: space-between;
   vertical-align: middle;
   height: 45px;
-`;
-const DetailsCard = styled.div`
-  display: flex;
-  white-space: pre-wrap;
-  flex-direction: column;
+  background-color: green;
 `;
 const FormContWraper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 1px;
   span {
     font-size: 13px;
   }
 `;
 const BtnGrp1 = styled.div`
   display: flex;
+  position: relative;
+  justify-content: space-between;
   vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
 `;
 const DtlsBodyNav = styled.div`
   display: flex;

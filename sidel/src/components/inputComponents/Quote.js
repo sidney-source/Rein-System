@@ -3,6 +3,7 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import select, { SelectChangeEvent } from "@mui/material/Select";
 import CustomSelectWthBtn from "./CustomSelectWthButton";
+import FacDebit from "./FacDebit";
 
 const Type = [
   {
@@ -24,14 +25,7 @@ const Quote = (props) => {
       <Layout>
         <RightContents>
           <a>Quote Generation</a>
-          <div>
-            <Button variant="outlined">Address</Button>
-            <CustomSelectWthBtn
-              label="Select"
-              data={Type}
-              onChange={onSelectChange}
-            />
-          </div>
+          <FacDebit />
         </RightContents>
         <LeftContents>
           <a>Ellgeo Seagon Quote</a>

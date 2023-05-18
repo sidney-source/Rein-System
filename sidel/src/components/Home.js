@@ -3,7 +3,6 @@ import Tooltip from "@mui/material/Tooltip";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
-import FacDebit from "./inputComponents/FacDebit";
 import React, { useState } from "react";
 import Dashboard from "./inputComponents/Dashboard";
 import Quote from "./inputComponents/Quote";
@@ -332,8 +331,8 @@ const Home = (props) => {
           </LeftSideArtCard>
         </LeftSideContainer>
         {/* <RightSide /> */}
-        {!modalOpen && <Quote setOpenModal={setModalOpen} />}
-        {modalOpen && <Dashboard setOpenModal={setModalOpen} />}
+        {modalOpen && <Quote setOpenModal={setModalOpen} />}
+        {!modalOpen && <Dashboard setOpenModal={setModalOpen} />}
       </BodyLayout>
     </Layout>
   );

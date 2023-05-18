@@ -203,7 +203,7 @@ const SearchDiv = styled.div`
   align-items: center;
   position: relative;
   justify-content: center;
-  gap: 5px;
+  gap: 2px;
   svg {
     color: blue;
     left: 0;
@@ -213,7 +213,7 @@ const SearchDiv = styled.div`
 
 const TopNav = styled.nav`
   display: flex;
-  padding: 5px;
+  padding: 2px;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
@@ -246,7 +246,7 @@ const NavList = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 2px;
+  margin: 0px;
 
   input {
     margin: 0px;
