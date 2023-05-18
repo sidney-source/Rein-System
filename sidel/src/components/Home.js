@@ -189,11 +189,10 @@ const Home = (props) => {
                 }}
               >
                 <a>
-                  Svg Code
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="22"
+                    height="22"
                     fill="currentColor"
                     class="bi bi-file-earmark-post-fill"
                     viewBox="0 0 16 16"
