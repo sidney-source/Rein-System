@@ -13,7 +13,6 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   max-width: 100%;
-  color:blue;
 `;
 const Layout = styled.div`
   display: flex;
