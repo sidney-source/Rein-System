@@ -332,7 +332,6 @@ const Home = (props) => {
           </LeftSideArtCard>
         </LeftSideContainer>
         {/* <RightSide /> */}
-
         {!modalOpen && <Quote setOpenModal={setModalOpen} />}
         {modalOpen && <Dashboard setOpenModal={setModalOpen} />}
       </BodyLayout>
@@ -508,9 +507,6 @@ const BodyLayout = styled.div`
   display: flex;
   flex-direction: row;
   background-color: transparent;
-
   width: auto;
-  margin: 5;
 `;
-
 export default Home;

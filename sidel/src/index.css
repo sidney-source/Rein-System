@@ -59,3 +59,14 @@ h5 {
   vertical-align: baseline;
   background: transparent;
 }
+p {
+  font-family: "Roboto", sans-serif;
+  color: rgb(15, 15, 15);
+  padding: 0;
+  border: 0;
+  font-weight: lighter;
+  outline: none;
+  font-size: 0.9em;
+  vertical-align: baseline;
+  background: transparent;
+}
