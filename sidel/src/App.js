@@ -6,8 +6,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Home from "./src/components/Home";
-import Login from "./src/components/Login";
+import Home from "./components/Home";
+import Login from "./components/Login";
 
 const express = require("express");
 const mongoose = require("");
