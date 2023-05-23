@@ -4,8 +4,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import Dashboard from "./inputComponents/Dashboard";
-import Quote from "./inputComponents/Quote";
+import Dashboard from "./components/inputComponents/Dashboard";
+import Quote from "./components/inputComponents/Quote";
 
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(true);

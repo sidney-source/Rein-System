@@ -127,7 +127,6 @@ const Closeic = styled.div`
   align-items: right;
   position: absolute;
 `;
-
 const Lock = styled.div`
   padding: 10px;
   margin: 0px;

@@ -23,7 +23,7 @@ const Login = (props) => {
       </Nav>
       <Section>
         <Hero>
-        {/* Welcome to Sidel Insurance Portal */}
+          {/* Welcome to Sidel Insurance Portal */}
           <h1>Welcome</h1>
           <img src="/images/Login-hero.svg" alt="" />
         </Hero>
